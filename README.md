@@ -2,11 +2,11 @@
 
 https://github.com/user-attachments/assets/6817703c-4029-456a-a45a-f36d7b2cabdb
 
-# Task Manager Limetray
+# Task Manager Application
 
 ## Overview
 
-Task Manager Limetray is a simple and efficient task management application built with React, TypeScript, and Vite. It provides an intuitive UI to create, filter, reorder, and delete tasks while offering a dark mode theme toggle.
+Task Manager Application is a simple and efficient task management application built with React, TypeScript, and Vite. It provides an intuitive UI to create, filter, reorder, and delete tasks while offering a dark mode theme toggle.
 
 ## Features
 
@@ -24,11 +24,11 @@ Task Manager Limetray is a simple and efficient task management application buil
 - **State Management**: React Context API
 - **Build Tool**: Vite
 - **Linting & Formatting**: ESLint, TypeScript ESLint
-- **Testing**: Jest, React Testing Library
 
 ## Directory Structure
 
 ```
+Directory structure:
 └── hritik-6918-task-manager-limetray/
     ├── README.md
     ├── eslint.config.js
@@ -40,7 +40,6 @@ Task Manager Limetray is a simple and efficient task management application buil
     ├── tsconfig.json
     ├── tsconfig.node.json
     ├── vite.config.ts
-    ├── jest.config.ts
     └── src/
         ├── App.tsx
         ├── index.css
@@ -50,19 +49,12 @@ Task Manager Limetray is a simple and efficient task management application buil
         │   ├── TaskFilter.tsx
         │   ├── TaskForm.tsx
         │   ├── TaskList.tsx
-        │   ├── ThemeToggle.tsx
-        │   └── TaskItem.tsx
+        │   └── ThemeToggle.tsx
         ├── context/
         │   ├── TaskContext.tsx
         │   └── ThemeContext.tsx
         ├── hooks/
-        │   ├── useLocalStorage.ts
-        │   ├── useTheme.ts
-        │   └── useTaskManager.ts
-        ├── tests/
-        │   ├── TaskForm.test.tsx
-        │   ├── TaskList.test.tsx
-        │   └── ThemeToggle.test.tsx
+        │   └── useLocalStorage.ts
         └── types/
             └── task.ts
 ```
