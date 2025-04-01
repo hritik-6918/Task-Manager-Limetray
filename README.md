@@ -2,98 +2,75 @@
 
 https://github.com/user-attachments/assets/6817703c-4029-456a-a45a-f36d7b2cabdb
 
-# Task Manager Application
+# Task Manager Limetray
 
-## Overview
-
-Task Manager Application is a simple and efficient task management application built with React, TypeScript, and Vite. It provides an intuitive UI to create, filter, reorder, and delete tasks while offering a dark mode theme toggle.
+A simple and elegant task management application built with **React**, **TypeScript**, **Vite**, and **Tailwind CSS**.
 
 ## Features
 
-- Add new tasks
-- Mark tasks as completed
-- Delete tasks
-- Drag-and-drop reordering of tasks
-- Task filtering (All, Pending, Completed)
-- Dark mode toggle
+- **Task Management**:
+  - Add new tasks with a simple form
+  - View task list with filtering (All, Pending, Completed)
+  - Toggle task completion status
+  - Delete tasks
+  - Reorder tasks via drag-and-drop
+- **Theme Support**:
+  - Switch between light and dark modes
+  - Persist theme preference in local storage
+- Responsive design using Tailwind CSS
+- Local storage for task persistence
+- Smooth animations for task interactions
 
-## Tech Stack
-
-- **Frontend**: React, TypeScript
-- **Styling**: Tailwind CSS
-- **State Management**: React Context API
-- **Build Tool**: Vite
-- **Linting & Formatting**: ESLint, TypeScript ESLint
-
-## Directory Structure
-
-```
-Directory structure:
-└── hritik-6918-task-manager-limetray/
-    ├── README.md
-    ├── eslint.config.js
-    ├── index.html
-    ├── package.json
-    ├── postcss.config.js
-    ├── tailwind.config.js
-    ├── tsconfig.app.json
-    ├── tsconfig.json
-    ├── tsconfig.node.json
-    ├── vite.config.ts
-    └── src/
-        ├── App.tsx
-        ├── index.css
-        ├── main.tsx
-        ├── vite-env.d.ts
-        ├── components/
-        │   ├── TaskFilter.tsx
-        │   ├── TaskForm.tsx
-        │   ├── TaskList.tsx
-        │   └── ThemeToggle.tsx
-        ├── context/
-        │   ├── TaskContext.tsx
-        │   └── ThemeContext.tsx
-        ├── hooks/
-        │   └── useLocalStorage.ts
-        └── types/
-            └── task.ts
-```
-
-## Installation & Setup
-
-### Prerequisites
-
-Ensure you have the following installed:
-
-- [Node.js](https://nodejs.org/) (Latest LTS recommended)
-- npm or yarn
-
-### Steps to Run Locally
+## Getting Started
 
 1. Clone the repository:
-   ```sh
-   git clone https://github.com/yourusername/hritik-6918-task-manager-limetray.git
-   cd hritik-6918-task-manager-limetray
-   ```
+
+```bash
+git clone https://github.com/hritik-6918/task-manager-limetray.git
+cd task-manager-limetray
+```
+
 2. Install dependencies:
-   ```sh
-   npm install
-   # or
-   yarn install
-   ```
-3. Start the development server:
-   ```sh
-   npm run dev
-   ```
-   The application should now be running at `http://localhost:5173/`.
 
-## Scripts
+```bash
+npm install
+# or
+yarn install
+```
 
-- `npm run dev` - Starts the development server.
-- `npm run build` - Builds the project for production.
-- `npm run preview` - Previews the production build.
-- `npm run lint` - Runs ESLint for code linting.
-- `npm run test` - Runs unit tests with Jest and React Testing Library.
+3. Run the development server:
 
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
+
+## Development Approach
+
+### Tech Stack Choices
+We chose **React** with **Vite** for its fast development experience and hot module replacement, making it ideal for a lightweight task manager. **TypeScript** ensures type safety and better code maintainability. **Tailwind CSS** accelerates UI development with utility-first styling and built-in dark mode support. **react-beautiful-dnd** was integrated for seamless drag-and-drop functionality.
+
+### Backend Architecture
+This is a frontend-only application that uses **localStorage** for persistent data storage via a custom `useLocalStorage` hook. The **TaskContext** manages task state globally, providing functions for adding, toggling, deleting, and reordering tasks efficiently.
+
+### Frontend Implementation
+The frontend leverages a **component-based architecture** with React. Key components include `TaskForm` for adding tasks, `TaskList` for displaying and managing tasks, `TaskFilter` for filtering tasks, and `ThemeToggle` for theme switching. **Context API** is used for state management across components, ensuring a smooth user experience.
+
+### Challenges Faced & Solutions
+1. **Drag-and-Drop Implementation**: Integrating drag-and-drop was tricky with state updates. We used **react-beautiful-dnd** and a custom `reorderTasks` function in the TaskContext to handle reordering seamlessly.
+2. **Theme Persistence**: Maintaining theme state across sessions required local storage. The `ThemeContext` with `useLocalStorage` solved this by syncing the theme with the DOM and storage.
+3. **Task Filtering**: Filtering tasks dynamically while maintaining performance was a concern. We used `React.useMemo` in the TaskContext to optimize the `filteredTasks` computation.
+4. **Responsive Design**: Ensuring a consistent UI across devices was achieved with Tailwind CSS’s responsive utilities and a mobile-first approach.
+
+## Built With Tech Stack
+
+- React (with Vite)
+- TypeScript
+- Tailwind CSS
+- react-beautiful-dnd (Drag-and-Drop)
+- Lucide React (Icons)
 
 Made with ❤️ by Hritik-6918
